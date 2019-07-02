@@ -119,8 +119,8 @@ $(function() {
 	Modal.prototype._checkCookies = function(row) {
 		//console.log('クッキーをチェック');
 		
-		//if (!modal._getCookieExistence()) {
-		if (modal._getCookieExistence()) {
+		if (!modal._getCookieExistence()) {
+		//if (modal._getCookieExistence()) {
 			//console.log("not exist.");
 			modal._setCookie();
 			
