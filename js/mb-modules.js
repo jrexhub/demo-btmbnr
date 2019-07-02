@@ -139,7 +139,8 @@ $(function() {
 	};
 	
 	Modal.prototype._setCookie = function() {
-		$.cookie('modal', 'event', {expires: 1, path: '/'});
+		//$.cookie('modal', 'event', {expires: 1, path: '/'});
+		$.cookie('modal', 'event', {expires: -1, path: '/'});
 		
 		//return true;
 	};
