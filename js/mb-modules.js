@@ -12,8 +12,8 @@ $(function() {
 	
 	Modal.prototype.initialize = function() {
 		this._ua = window.navigator.userAgent;
-		this.device = $("#modal-module").data("device");
-		this.env = $("#modal-module").data("env");
+		this.device = $("#btmbnr-module").data("device");
+		this.env = $("#btmbnr-module").data("env");
 		this.today = new Date();
 				
 		//this.prefix = "https://www.modern-blue.com/mb/elements/banner/";
@@ -139,8 +139,8 @@ $(function() {
 	};
 	
 	Modal.prototype._setCookie = function() {
-		//$.cookie('modal', 'event', {expires: 1, path: '/'});
-		$.cookie('modal', 'event', {expires: -1, path: '/'});
+		$.cookie('modal', 'event', {expires: 1, path: '/'});
+		//$.cookie('modal', 'event', {expires: -1, path: '/'});//確認用 cookieが保存されない
 		
 		//return true;
 	};
@@ -267,9 +267,7 @@ inlineStyle += `</style>`;
 		
 		var htmlTag = $(`<div id="overlay">
 			<div id="contArea">
-				<a href="${row.link}" target="_blank">
-					<img src="https://placehold.jp/ffffff/ffffff/1x1.jpg?css=%7B%22opacity%22%3A%22%20.1%22%7D">
-				</a>
+				${modal._checkUrl(row.link) ? '<a href="' + row.link + '" target="_blank"><img src="https://placehold.jp/ffffff/ffffff/1x1.jpg?css=%7B%22opacity%22%3A%22%20.1%22%7D"></a>' : '<img src="https://placehold.jp/ffffff/ffffff/1x1.jpg?css=%7B%22opacity%22%3A%22%20.1%22%7D">'}
 				<span class="close"></span>
 			</div>
 		</div>`);
